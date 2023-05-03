@@ -1,7 +1,7 @@
 from flask import Flask, request
 from telegram import Bot, Update
-from telegram.ext import Dispatcher, CommandHandler
-from main import start
+from telegram.ext import Dispatcher, CommandHandler,Filters
+from main import start,msg
 
 
 
@@ -30,6 +30,7 @@ def webhookbot():
         update: Update = Update.de_json(data, bot)
 
         dp.add_handler(CommandHandler('start', start))
+        dp.dispatcher.add_handler(Filters.update,msg)
 
         # process update
         dp.process_update(update)
