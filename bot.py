@@ -1,4 +1,4 @@
-from telegram.ext import Updater, CommandHandler,Filters
+from telegram.ext import Updater, CommandHandler,Filters,MessageHandler
 import os
 
 from main import start,msg
@@ -9,7 +9,7 @@ def main():
     updater = Updater(TOKEN)
     dp = updater.dispatcher
     dp.add_handler(CommandHandler('start', start))
-    dp.add_handler(Filters.update,msg)
+    dp.add_handler(MessageHandler(Filters.update,msg))
 
     updater.start_polling()
     updater.idle()
