@@ -15,7 +15,7 @@ def hello_world():
     return 'Hello from Flask!'
 
 
-@app.route('/webhook', methods=['POST', 'GET'])
+@app.route('/bot', methods=['POST', 'GET'])
 def webhookbot():
 
     if request.method == 'GET':
