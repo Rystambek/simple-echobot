@@ -6,7 +6,7 @@ from main import start
 
 
 app = Flask(__name__)
-TOKEN = '5961200046:AAH4p8t9oPXRr9zCbpZMoxUyVP6ZrPKV_rY'
+TOKEN = '6162217632:AAEnncQeDNHOnSCAlMw0PTxbkJpAQQdL2X4'
 
 bot: Bot = Bot(TOKEN)
 
@@ -15,7 +15,7 @@ def hello_world():
     return 'Hello from Flask!'
 
 
-@app.route('/bot', methods=['POST', 'GET'])
+@app.route('/webhook', methods=['POST', 'GET'])
 def webhookbot():
 
     if request.method == 'GET':
